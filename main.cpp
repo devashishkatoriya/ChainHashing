@@ -200,9 +200,9 @@ int HashTable::HashFunc(char key[MAX])                             //Hash Functi
     
     for(i=0;i<3 && key[i]!='\0';i++)
         first = (first*10) + key[i];
-    for(i=3;i<6 && key[i]!='\0';i++)
+    for(;i<6 && key[i]!='\0';i++)
         middle = (middle*10) + key[i];
-    for(i=6;key[i]!='\0';i++)
+    for(;key[i]!='\0';i++)
         last = (last*10) + key[i];
     
     total = first + middle + last;
@@ -305,7 +305,8 @@ int main()
         cout<<"\nEnter your choice : ";
         ch = getInt();
         cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        switch(ch) {
+        switch(ch)
+        {
             case 1 :
                 obj.construct();
                 break;
@@ -359,92 +360,40 @@ Program to implement Telephone Directory using Hash Table.
  1 to Insert new Record
  2 to Display Telephone Directory
  3 to Search a name
- 4 for IsFull
+ 4 to Delete a entry
+ 5 for IsFull
  -1 to Clear whole Directory
   0 to Quit
-Enter your choice :1
- 1
+Enter your choice : 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
  1 for Linear Hashing.
  2 for Quadratic Hashing.
-Enter which Hashing Technique to use ?1
- 1
+Enter which Hashing Technique to use ? 1
 
 Enter Record Details :-
-Enter Name      :d
- d
-Enter Ph.No.    :1
- 1
-
+Enter Name      : d
+Enter Ph.No.    : 1
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 to Insert new Record
  2 to Display Telephone Directory
  3 to Search a name
- 4 for IsFull
+ 4 to Delete a entry
+ 5 for IsFull
  -1 to Clear whole Directory
   0 to Quit
-Enter your choice :1
- 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
- 1 for Linear Hashing.
- 2 for Quadratic Hashing.
-Enter which Hashing Technique to use ?1
- 1
-
-Enter Record Details :-
-Enter Name      :d
- d
-Enter Ph.No.    :2
- 2
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 1 to Insert new Record
- 2 to Display Telephone Directory
- 3 to Search a name
- 4 for IsFull
- -1 to Clear whole Directory
-  0 to Quit
-Enter your choice :1
- 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
- 1 for Linear Hashing.
- 2 for Quadratic Hashing.
-Enter which Hashing Technique to use ?1
- 1
-
-Enter Record Details :-
-Enter Name      :d
- d
-Enter Ph.No.    :3
- 3
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 1 to Insert new Record
- 2 to Display Telephone Directory
- 3 to Search a name
- 4 for IsFull
- -1 to Clear whole Directory
-  0 to Quit
-Enter your choice :2
- 2
+Enter your choice : 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
                 Telephone Directory
 ---------------------------------------------
 Pos.    Name            Ph.No.          Chain
 ---------------------------------------------
-0       d               1               1
-1       d               2               2
-2       d               3               -1
+0       d               1               -1
+1                       0               -1
+2                       0               -1
 3                       0               -1
 4                       0               -1
 5                       0               -1
@@ -459,48 +408,70 @@ MAX is 10
  1 to Insert new Record
  2 to Display Telephone Directory
  3 to Search a name
- 4 for IsFull
+ 4 to Delete a entry
+ 5 for IsFull
  -1 to Clear whole Directory
   0 to Quit
-Enter your choice :3
- 3
+Enter your choice : 3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enter Name to search :d
- d
+Enter name to Search : d
 
 Name    : d
 Ph.No.  : 1
-Name    : d
-Ph.No.  : 2
-Name    : d
-Ph.No.  : 3
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 to Insert new Record
  2 to Display Telephone Directory
  3 to Search a name
- 4 for IsFull
+ 4 to Delete a entry
+ 5 for IsFull
  -1 to Clear whole Directory
   0 to Quit
-Enter your choice :3
- 3
+Enter your choice : 4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enter Name to search :e
- e
+Enter name to Delete : d
 
-Record NOT found!
+Entry Deleted Successfully!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  1 to Insert new Record
  2 to Display Telephone Directory
  3 to Search a name
- 4 for IsFull
+ 4 to Delete a entry
+ 5 for IsFull
  -1 to Clear whole Directory
   0 to Quit
-Enter your choice :0
- 0
+Enter your choice : 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                Telephone Directory
+---------------------------------------------
+Pos.    Name            Ph.No.          Chain
+---------------------------------------------
+0                       0               -1
+1                       0               -1
+2                       0               -1
+3                       0               -1
+4                       0               -1
+5                       0               -1
+6                       0               -1
+7                       0               -1
+8                       0               -1
+9                       0               -1
+---------------------------------------------
+MAX is 10
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1 to Insert new Record
+ 2 to Display Telephone Directory
+ 3 to Search a name
+ 4 to Delete a entry
+ 5 for IsFull
+ -1 to Clear whole Directory
+  0 to Quit
+Enter your choice : 0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Thank you for using this program :)
